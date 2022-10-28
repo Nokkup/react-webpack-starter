@@ -14,7 +14,7 @@ const plugins = [
 module.exports = {
   entry: paths.entry,
   output: {
-    filename: 'main.[contenthash:8].js',
+    filename: 'main.[contenthash].js',
     path: paths.build,
     clean: true,
   },
@@ -22,7 +22,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
@@ -34,7 +34,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: '__[local]--[hash:base64:5]',
+                localIdentName: '[local]--[hash:base64:6]',
               },
             },
           },
@@ -45,6 +45,6 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
 };
