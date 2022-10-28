@@ -22,7 +22,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx|ts|tsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/i,
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
@@ -41,6 +41,13 @@ module.exports = {
           'postcss-loader',
           'sass-loader',
         ],
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name]--[hash:6].[ext]',
+        },
       },
     ],
   },
