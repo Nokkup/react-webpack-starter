@@ -15,6 +15,7 @@ module.exports = {
   entry: paths.entry,
   output: {
     filename: 'main.[contenthash].js',
+    assetModuleFilename: 'assets/[name]--[hash:6][ext]',
     path: paths.build,
     clean: true,
   },
@@ -46,7 +47,14 @@ module.exports = {
         test: /\.(woff2?|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'fonts/[name]--[hash:6].[ext]',
+          filename: 'fonts/[name]--[hash:6][ext]',
+        },
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
+        type: 'asset',
+        generator: {
+          filename: 'images/[name]--[hash:6][ext]',
         },
       },
     ],
