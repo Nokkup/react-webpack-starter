@@ -1,16 +1,33 @@
 {
   "compilerOptions": {
-    "outDir": "./build/",
-    "noImplicitAny": true,
-    "module": "ESNext",
     "target": "ES5",
-    "jsx": "react-jsx",
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
+    "module": "ESNext",
     "moduleResolution": "Node",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "strictBindCallApply": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
     "baseUrl": "src",
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules/**/*"]
+  "exclude": ["node_modules/**/*", "build"]
 }
